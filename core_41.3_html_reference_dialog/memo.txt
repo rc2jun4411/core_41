@@ -1,0 +1,179 @@
+ref 44. https://developer.mozilla.org/en-US/docs/Web
+        /HTML/Reference/Elements
+    In this article;
+     ・Main root
+     ・Document metadata
+     ・Sectioning root
+     ・Content sectioning
+     ・Text content
+     ・Inline text semantics
+     ・Image and multimedia
+     ・Embedded content
+     ・SVG and MathML
+     ・Scripting
+     ・Demarcating edits
+     ・Table content
+     ・Forms
+     ・Interactive elements
+     ・Web Components
+     ・Obsolete and deprecated elements
+
+ref 44.3 https://developer.mozilla.org/en-US/docs/Web
+        /HTML/Reference/Elements/dialog
+    In this article;
+     ・Attributes
+     ・Description
+     ・Accessibility
+     ・Examples
+
+2026-09-12, 
+folder: "core_41.3_html_reference_dialog", 
+
+actions;
+1. Preparatons
+    copy folder from "core_41.2_html_reference_details"
+                to   "core_41.3_html_reference_dialog"
+2. edit
+2.29 index.html, style.css per ref 44.3 <dialog>
+ ・Attributes,・Description, ・Accessibilit  pass/no coding
+ ・Examples, Invoker Command API HTML attributes => ex-41.10 working
+   coding error
+   ask Gemini,
+Q1:
+  <dialog>にCSSが効きません？
+A1:
+  IDとクラスの使い分けのポイントを簡単にまとめておきます。
+id (#): 
+ ページ内で 1個だけ の特別な要素（今回のような特定の <dialog> など）
+
+class (.):
+ ページ内で 何回でも使い回す スタイル（ボタンデザインやカード枠など）
+
+Invoker Command API (commandfor="my-dialog") のように、
+JavaScriptやHTML属性で対象を指定するときは ID が必須になるケースが
+多いので、基本は id を使いつつ、CSS側で #my-dialog と指定する形で
+バッチリです。
+この調子で開発を楽しんでいきましょう！ 
+
+Q2:
+  Q2: 開いたdialogの位置を制御するには？　
+  Q2.1: page内=<body>の場合？、
+  Q2.2:<div>内の場合？　お願いします
+
+A2:
+  <dialog> 要素は showModal() （または Invoker Command API の 
+command="show-modal"）で開いた場合、ページの通常フローから外れて 
+Top Layer（最前面レイヤー） に配置されます。
+  そのため、親要素が <body> であっても <div> であっても、
+画面全体（ビューポート）に対する位置決めになります。
+位置の制御方法はどちらのケースでも共通です。
+
+Q2.1 / Q2.2: 位置制御の基本（モーダル表示時）
+  デフォルトでは画面の中央に配置されます。位置を変更する場合は、
+CSSで margin や position（fixed または absolute）を指定します。
+
+A2.1 画面の上下左右の端に配置する（推奨）
+  margin をリセットし、top / left / bottom / right で位置を指定します。  
+CSS:
+#my-dialog {
+    /* デフォルトで auto になっている margin をリセット */
+    margin: 0;
+
+    /* 例: 画面右上（Top-Right）に固定する場合 */
+    top: 20px;
+    left: auto;
+    right: 20px;
+    bottom: auto;
+}
+
+A2.2: transform を使ったカスタム位置指定
+CSS:
+#my-dialog {
+    /* デフォルトで auto になっている margin をリセット */
+    margin: 0;
+
+    /* 例: 画面右上（Top-Right）に固定する場合 */
+    top: 20px;
+    left: auto;
+    right: 20px;
+    bottom: auto;
+}
+
+A2.3: 補足: 特定の <div> 内に留めたい場合
+  もしモーダル（背景を暗くして最前面に浮き出る）ではなく、
+特定の <div> の枠内に収まるように配置したい場合は、
+モーダルではなく通常のインライン要素として開くか、
+position: absolute を利用します。
+
+  通常表示（show() の場合、または open 属性時）:
+親 <div> に position: relative を設定します。
+<dialog> に position: absolute と位置（top: 0, left: 0 など）
+を指定します。
+
+  showModal() を使う場合:
+親 <div> の中にあっても必ず画面全体に対する位置になります。
+特定の <div> の位置に追従させたい場合は、JavaScript等でその 
+<div> の座標を取得して top/left を動的にセットする必要があります。
+
+
+Q3;
+１．２の表示、確認できました。ありがとうございました。
+<div> 内に留めたい場合もやってみます。Geminiさん JK lessons
+
+A3:
+確認できて良かったです！
+<div> 内に留める表示（モーダルではなく、特定のエリア枠内に配置する表示）
+を試す際は、以下のコードパターンを参考にしてみてください。
+
+<div> 内に留めるコード例
+HTML:
+<div class="parent-box">
+  <p>親要素（div）の中身です</p>
+  
+  <!-- open 属性をつけて通常表示にします -->
+  <dialog id="inner-dialog" open>
+    <p>divの中に固定されたダイアログ</p>
+  </dialog>
+</div>
+CSS:
+/* 親要素に基準を設定 */
+.parent-box {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border: 2px dashed #666;
+    padding: 10px;
+}
+
+/* ダイアログを親要素内の右上などに配置 */
+#inner-dialog {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin: 0; /* ブラウザ標準のマージンを打ち消す */
+    
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+}
+ポイント: showModal() ではなく open 属性（または JavaScript の 
+show()）で開くことで、Top Layer に浮き出さずに親 <div> の中に
+配置できます。
+ぜひ手元で試して動かしてみてくださいね！
+
+
+3. GitHub, initial commit
+
+ref 44.3 MDN path:  
+Web
+HTML
+Reference
+Elements
+<dialog>
+
+emoji;
+🎉🍩🌙®️ 🍄📧❌🍄 🔀📧®️📧
+
+ref. https://emojicopy.com/
+🐶🐸🥌🏈⛩️🚑🈲㊙️  🩷❤️🧡💛💚🩵💙💜🖤🩶🤍🤎
+🇯🇵

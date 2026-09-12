@@ -1,0 +1,62 @@
+/* C:\Users\rc2ju\OneDrive\Documents\core_41\core_41.3_html_reference_dialog\style.css */
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: cyan;
+}
+.hr1 {
+    border: none;
+    border-top: 3px double #333333;
+    color: #333333;
+    overflow: visible;
+    text-align: center;
+    height: 4px;
+    width: 80%;
+    background-color: lightgreen;
+}
+.hr1::after {
+    background: white; /* none 透明*/
+    content: "'🩷'";
+    padding: 4px;
+    position: relative;
+    top: -13px;
+}
+
+body {
+    width:240px;
+}
+
+/* ex-41.10 <dialog> */
+/* 位置設定　old */
+#my-dialog {
+    border: none;
+    /* Optional: Also remove the focus outline if it interferes with your design */
+    outline: none;
+
+    /* Modern styling alternatives */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px red;
+    padding: 20px;
+} 
+
+/* mod.1 Gemini */
+#my-dialog {
+    /* デフォルトで auto になっている margin をリセット */
+    margin: 0;
+
+    /* 例: 画面右上（Top-Right）に固定する場合 */
+    top: 20px;
+    left: auto;
+    right: 20px;
+    bottom: auto;
+}
+
+/* mod.2 Gemini */
+#my-dialog {
+    margin: 0;
+    top: 50%;
+    left: 20px;
+    /* 垂直方向だけ中央揃え */
+    transform: translateY(-50%);
+}
