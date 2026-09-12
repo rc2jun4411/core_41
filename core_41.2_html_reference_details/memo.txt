@@ -1,0 +1,59 @@
+ref 44. https://developer.mozilla.org/en-US/docs/Web
+          /HTML/Reference/Elements
+    In this article;
+     ・Main root
+     ・Document metadata
+     ・Sectioning root
+     ・Content sectioning
+     ・Text content
+     ・Inline text semantics
+     ・Image and multimedia
+     ・Embedded content
+     ・SVG and MathML
+     ・Scripting
+     ・Demarcating edits
+     ・Table content
+     ・Forms
+     ・Interactive elements
+     ・Web Components
+     ・Obsolete and deprecated elements
+     ・See also
+
+ref 44.2 https://developer.mozilla.org/en-US/docs/Web
+        /HTML/Reference/Elements/details
+    In this article;
+     ・Try it
+     ・Attributes
+     ・Events
+     ・Examples
+
+2026-09-12, 
+folder: "core_41.2_html_reference_details", 
+
+actions;
+1. Preparatons
+    copy folder from "core_41" "core_41.1_html_reference_hr"
+                to   "core_41.2_html_reference_details"
+2. edit
+2.28 index.html, style.css per ref 44.2 <details></details>
+ ・Try it                               => ex-41.5 done!
+ ・Examples, A basic disclosure example => ex-41.6 done!
+    　　　 , Creating an open disclosure box => ex-41.7 done!
+    　　　 , Multiple named disclosure boxes => ex-41.8 done!
+    　　　 , Customizing the appearance      => ex-41.9 done!
+
+3. GitHub, initial commit
+
+ref 44.2 MDN path:  
+Web
+HTML
+Reference
+Elements
+<details>
+
+emoji;
+🎉🍩🌙®️ 🍄📧❌🍄 🔀📧®️📧
+
+ref. https://emojicopy.com/
+🐶🐸🥌🏈⛩️🚑🈲㊙️  🩷❤️🧡💛💚🩵💙💜🖤🩶🤍🤎
+🇯🇵

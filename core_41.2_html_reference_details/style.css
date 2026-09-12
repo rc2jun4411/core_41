@@ -1,0 +1,155 @@
+/* C:\Users\rc2ju\OneDrive\Documents\core_41\core_41.2_html_reference_details\style.css */
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: cyan;
+}
+.hr1 {
+    border: none;
+    border-top: 3px double #333333;
+    color: #333333;
+    overflow: visible;
+    text-align: center;
+    height: 4px;
+    width: 80%;
+    background-color: lightgray;
+}
+.hr1::after {
+    background: white; /* none 透明*/
+    content: "'🩷'";
+    padding: 4px;
+    position: relative;
+    top: -13px;
+}
+
+body {
+    width:240px;
+}
+
+/* ex-41.5 <details> */
+details {
+    border: 1px solid #aaaaaa;
+    border-radius: 4px;
+    padding: 0.5em 0.5em 0;
+}
+
+summary {
+    font-weight: bold;
+    margin: -0.5em -0.5em 0;
+    padding: 0.5em;
+}
+
+details[open] {
+    padding: 0.5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaaaaa;
+    margin-bottom: 0.5em;
+}
+
+/* ex-41.6 <details> */
+.hr2 {
+    border: none;
+    border-top: 3px double #333333;
+    color: #333333;
+    overflow: visible;
+    text-align: center;
+    height: 4px;
+    width: 80%;
+    background-color: lightgray;
+}
+.hr2::after {
+    background: white;
+    /* none 透明*/
+    content: "'❤️'";
+    padding: 4px;
+    position: relative;
+    top: -13px;
+}
+
+/* ex-41.7 <details> */
+.hr3 {
+    border: none;
+    border-top: 3px double #333333;
+    color: #333333;
+    overflow: visible;
+    text-align: center;
+    height: 4px;
+    width: 80%;
+    background-color: lightgray;
+}
+.hr3::after {
+    background: none; /* none: 透明, white: 白抜き*/
+    content: "'🧡'";
+    padding: 4px;
+    position: relative;
+    top: -13px;
+}
+
+/* ex-41.8 <details> */
+.hr4 {
+    border: none;
+    border-top: 3px double #333333;
+    color: #333333;
+    overflow: visible;
+    text-align: center;
+    height: 4px;
+    width: 80%;
+    background-color: lightgray;
+}
+.hr4::after {
+    background: none;
+    /* none: 透明, white: 白抜き*/
+    content: "'💛'";
+    padding: 4px;
+    position: relative;
+    top: -13px;
+}
+
+/* ex-41.9 <details> */
+.hr5 {
+    border: none;
+    border-top: 3px double #333333;
+    color: #333333;
+    overflow: visible;
+    text-align: center;
+    height: 4px;
+    width: 80%;
+    background-color: lightgray;
+}
+.hr5::after {
+    background: none;
+    /* none: 透明, white: 白抜き*/
+    content: "'💚'";
+    padding: 4px;
+    position: relative;
+    top: -1px; /* -13pxが良い*/
+}
+
+.details1 {
+    font:
+        16px "Open Sans",
+        "Calibri",
+        sans-serif;
+    width: 240px;
+}
+.details1>summary {
+    padding: 2px 6px;
+    width: 15em;
+    background-color: lightgreen;
+    border: none;
+    box-shadow: 3px 3px 4px black;
+    cursor: pointer;
+}
+.details1>p {
+    border-radius: 0 0 10px 10px;
+    background-color: #dddddd;
+    padding: 2px 6px;
+    margin: 0;
+    box-shadow: 3px 3px 4px black;
+}
+.details1:open>summary1 {
+    background-color: #ccccff;
+}
