@@ -1,0 +1,74 @@
+/* C:\Users\rc2ju\OneDrive\Documents\core_41\style.css */
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: cyan;
+}
+.hr1 {
+    border: none;
+    border-top: 3px double #333333;
+    color: #333333;
+    overflow: visible;
+    text-align: center;
+    height: 4px;
+    width: 80%;
+    background-color: lightgray;
+}
+.hr1::after {
+    background: white;
+    content: "§";
+    padding: 4px;
+    position: relative;
+    top: -13px;
+    color: red;
+}
+
+.hr2 {
+    border: none;
+    height: 2px;
+    background-color: limegreen;
+}
+
+/* ex-41.1 */
+/* Try it */
+body {
+    width:240px;
+}
+
+.p1 {
+    border-block: solid 1px green;
+    writing-mode: horizontal-tb;
+}
+
+/* ex-41.3 */
+/* Examples,  */
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 100px;
+    margin: 0.75rem;
+    padding: 0.75rem;
+    border: 1px solid lightgrey;
+}
+
+.hr11 {
+    border: none;
+    border-top: 3px double #333333;
+    color: #333333;
+    overflow: visible;
+    text-align: center;
+    height: 4px;
+    width: 80%;
+    background-color: lightgray;
+}
+
+.hr11::after {
+    background: white; /* none: 透明*/
+    content: "🐸";
+    position: relative;
+    top: -12px;
+
+}

@@ -1,0 +1,57 @@
+ref 44. https://developer.mozilla.org/en-US/docs/Web
+          /HTML/Reference/Elements
+    In this article;
+     ・Main root
+     ・Document metadata
+     ・Sectioning root
+     ・Content sectioning
+     ・Text content
+     ・Inline text semantics
+     ・Image and multimedia
+     ・Embedded content
+     ・SVG and MathML
+     ・Scripting
+     ・Demarcating edits
+     ・Table content
+     ・Forms
+     ・Interactive elements
+     ・Web Components
+     ・Obsolete and deprecated elements
+     ・See also
+
+ref 44.1 https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements
+          /hr 
+    In this article; <hr></hr>
+     ・Try it
+     ・Attributes
+     ・Example
+
+2026-09-12, 
+folder: "core_41.1_<hr> HTML thematic break (horizontal rule) element", 
+
+actions;
+1. Preparatons
+    copy folder from "core_40" "core_40.3_Properties_border-block"
+                to   "core_41" "core_41.1_<hr> HTML thematic break (horizontal rule) element"
+2. edit
+2.27 index.html, style.css per ref 44.1
+ ・Try it                             => ex-41.1 done
+ ・Examples,
+    Thematic break between paragraphs     => ex-41.2 done
+    Thematic break between list items     => ex-41.3 done
+    Thematic break between select options => ex-41.4 done
+3. GitHub, initial commit
+
+ref 44.1 MDN path:  
+Web
+HTML
+Reference
+Elements
+<hr>
+
+emoji;
+🎉🍩🌙®️ 🍄📧❌🍄 🔀📧®️📧
+
+ref. https://emojicopy.com/
+🐶🐸🥌🏈⛩️🚑🈲㊙️  🩷❤️🧡💛💚🩵💙💜🖤🩶🤍🤎
+🇯🇵
