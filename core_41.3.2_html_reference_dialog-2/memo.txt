@@ -1,0 +1,126 @@
+2026-09-13
+=> ex-41.11 working => ex-41.12へ
+
+ask Gemini:
+Q4:
+Geminiさん　おはよう JKです。
+<div> 内に留める表示　挑戦してます。
+<div> 内のbutton "Open dialog"を押すと左上隅にbutton 
+"close"が付いたdialogが表示されます？
+A4:
+おはようございます！画面を拝見しました。
+原因は command="show-modal" の記述です。
+command="show-modal" を使うと、ブラウザが強制的にモーダルモード
+（Top Layer／画面全体基準）でダイアログを開き直してしまうため、
+position: absolute による <div> 内への固定が外れて
+画面の左上に飛んでしまいます。
+
+解決方法:
+command="show-modal" を command="show-picker" に変更するか、
+属性を外して command="toggle-popover" のように扱うか、
+JavaScriptで制御します。
+
+Invoker Command API で「最前面（モーダル）ではなく普通に開く」
+場合は、コマンドを toggle-popover やカスタムコマンドにするか、
+あるいは属性を使わずに開く形にします。
+
+1. Invoker Command API を使う場合（HTMLのみで解決）
+ボタンの command を toggle-popover 等に変更（※popover属性を併用）
+するか、シンプルにダイアログの表示だけを切り替えます。
+HTML
+<!-- command="show-modal" をやめ、通常の開閉コマンドにする -->
+<button command="toggle-popover" 
+    commandfor="inner-dialog">Open dialog</button>
+
+<dialog id="inner-dialog" popover>
+  <p>divの中に固定されたダイアログ</p>
+  <button commandfor="inner-dialog" 
+      command="hide-popover">Close</button>
+</dialog>
+
+2. JavaScript で制御する場合
+HTMLのボタンから command 属性を外し、JSで .show() （※ showModal() 
+ではない）を呼び出します。
+
+HTML:
+<button id="open-btn">Open dialog</button>
+
+JavaScript:
+const dialog = document.getElementById('inner-dialog');
+const openBtn = document.getElementById('open-btn');
+
+openBtn.addEventListener('click', () => {
+  // showModal() ではなく show() を使うのがポイント！
+  dialog.show(); 
+});
+
+まとめ
+showModal() / command="show-modal"
+→ 画面中央に最前面で表示（<div> から飛び出す）
+
+show() / 通常表示
+→ HTML上の位置を維持（<div> 内の position: absolute が効く）
+
+show-modal は常に「画面全体（ビューポート）」を基準にしてしまう点だけ
+覚えておくとバッチリです！
+
+
+2026-09-13
+=> ex-41.12 working
+1. Invoker Command API を使う場合（HTMLのみで解決） を implement, working.
+copy folder from "core_41.3.1_html_reference_dialog-1"
+            to   "core_41.3.2_html_reference_dialog-2"
+
+ask Gemini:
+Q5:
+1. Invoker Command API を使う場合（HTMLのみで解決）をやってみました。
+が、cssの修正が解かりません？
+
+A5:
+popover 属性を追加すると、ブラウザの既定スタイルで position: fixed や
+位置調整が上書きされるため、CSSの指定方法を少し調整する必要があります。
+以下のように CSS を変更してみてください。
+
+CSSの修正例:
+.parent-box {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border: 2px dashed #666;
+    padding: 10px;
+}
+
+/* popover 属性がついた #inner-dialog のスタイル調整 */
+#inner-dialog {
+    /* 1. popover 特有の位置指定をリセット */
+    position: absolute;
+    inset: auto; /* ブラウザ規定の fixed 位置決めを解除 */
+    
+    /* 2. 親要素(.parent-box)内の右上に配置 */
+    top: 10px;
+    right: 10px;
+    margin: 0;
+
+    /* 装飾 */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+Q6:
+viewportの右上にpopupされました？
+A6:
+popover 属性を指定すると、HTMLの階層（<div> の中など）に
+関わらず、ブラウザによって強制的に画面全体を基準とする 
+Top Layer（最前面レイヤー） に配置されてしまいます。
+
+そのため、position: absolute や inset: auto を指定しても 
+<div> の中に留めることができません。
+
+最もシンプルで確実に <div> 内に留める方法
+Invoker Command API ではなく JavaScript の .show() 
+を使用する方法です。
+これなら Top Layer に移動せず、CSSの position: absolute 
+が正しく機能します。
+

@@ -1,0 +1,40 @@
+<!-- C:\Users\rc2ju\OneDrive\Documents\core_41\core_41.3_html_reference_dialog\index.html -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Sonsie+One" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <title>HTML Reference, Elements</title>
+</head>
+
+<body>
+  <a>"ex-41.11, HTML Reference, Elements =dialog=;<br>
+    ・Examples,<br> Invoker Command API HTML attributes "<br>
+    Gemini, div内に表示</a><br>
+    <div class="parent-box">
+      <button command="show-modal" 
+          commandfor="inner-dialog">Open dialog</button>
+      <p>親要素(div)の中身です</p>
+  
+      <!-- open 属性をつけて通常表示にします -->
+      <dialog id="inner-dialog" open>
+        <p>divの中に固定されたダイアログ</p>
+        <button commandfor="inner-dialog" 
+          command="close">Close</button>
+      </dialog>
+    </div>
+  <hr class="hr1">
+
+<!-- Open dialog buttonを押すと、左上隅にdialogが
+ 　　popup表示される(close button付き) ask Gemini 
+  => folder: core_41.3.2_html_reference_dialog-2, ex-41.12-->
+
+  <hr>
+  <!-- <script src="index.js" defer></script> -->
+</body>
+</html>
+

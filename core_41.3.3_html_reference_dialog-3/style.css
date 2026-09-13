@@ -1,0 +1,84 @@
+/* C:\Users\rc2ju\OneDrive\Documents\core_41\core_41.3_html_reference_dialog\style.css */
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: cyan;
+}
+.hr1 {
+    border: none;
+    border-top: 3px double #333333;
+    color: #333333;
+    overflow: visible;
+    text-align: center;
+    height: 4px;
+    width: 80%;
+    background-color: lightgreen;
+}
+.hr1::after {
+    background: white; /* none 透明*/
+    content: "'🩷'";
+    padding: 4px;
+    position: relative;
+    top: -13px;
+}
+
+body {
+    width:320px;
+}
+
+/* ex-41.11 
+...
+*/
+
+/* ex-41.12 
+...
+*/
+
+/* ex-41.13 */
+/* Q8/A8: */
+.parent-box {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border: 2px dashed #666;
+    padding: 10px;
+}
+
+#inner-dialog {
+    position: absolute;
+    /* 位置のリセット（これがないと画面外に飛んで見えなくなります） */
+    inset: auto;
+
+    /* parent-box 内の右上に配置 */
+    top: 10px;
+    right: 10px;
+    margin: 0;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+/* Q7/A7:
+.parent-box {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border: 2px dashed #666;
+    padding: 10px;
+}
+
+#inner-dialog {
+    /* 親要素(.parent-box)を基準にする *
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin: 0;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 10px;
+} */

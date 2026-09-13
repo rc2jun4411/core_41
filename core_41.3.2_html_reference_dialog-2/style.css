@@ -1,0 +1,61 @@
+/* C:\Users\rc2ju\OneDrive\Documents\core_41\core_41.3_html_reference_dialog\style.css */
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: cyan;
+}
+.hr1 {
+    border: none;
+    border-top: 3px double #333333;
+    color: #333333;
+    overflow: visible;
+    text-align: center;
+    height: 4px;
+    width: 80%;
+    background-color: lightgreen;
+}
+.hr1::after {
+    background: white; /* none 透明*/
+    content: "'🩷'";
+    padding: 4px;
+    position: relative;
+    top: -13px;
+}
+
+body {
+    width:240px;
+}
+
+/* ex-41.11 */
+/* 親要素に基準を設定 
+...
+*/
+
+/* ex-41.12 Gemini*/
+.parent-box {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border: 2px dashed #666;
+    padding: 10px;
+}
+
+/* popover 属性がついた #inner-dialog のスタイル調整 */
+#inner-dialog {
+    /* 1. popover 特有の位置指定をリセット */
+    position: absolute;
+    inset: auto;
+    /* ブラウザ規定の fixed 位置決めを解除 */
+
+    /* 2. 親要素(.parent-box)内の右上に配置 */
+    top: 10px;
+    right: 10px;
+    margin: 0;
+
+    /* 装飾 */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 10px;
+}
