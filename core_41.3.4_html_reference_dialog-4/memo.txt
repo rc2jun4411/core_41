@@ -1,0 +1,22 @@
+ref 44. https://developer.mozilla.org/en-US/docs/Web
+        /HTML/Reference/Elements
+
+ref 44.3 https://developer.mozilla.org/en-US/docs/Web
+        /HTML/Reference/Elements/dialog
+    In this article;
+     ・Attributes
+     ・Description
+     ・Accessibility
+     ・Examples
+
+2026-09-13
+folder: "core_41.3.4_html_reference_dialog-4", 
+
+actions;
+1. Preparatons
+    copy folder from "core_41.3.3_html_reference_dialog-3"
+                to   "core_41.3.4_html_reference_dialog-4"
+2. edit
+2.30 index.html, style.css per ref 44.3 <dialog>
+ ・Examples, Creating a modal dialog
+   => ex-41.14 done!

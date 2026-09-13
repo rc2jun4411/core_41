@@ -1,0 +1,56 @@
+<!-- C:\Users\rc2ju\OneDrive\Documents\core_41\core_41.3.7_html_reference_dialog-7\index.html -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Sonsie+One" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <title>HTML Reference, Elements</title>
+</head>
+
+<body>
+  <a>"ex-41.17, HTML Reference, Elements =dialog=;<br>
+    ・Examples,<br> Comparison of different closedby behaviors "<br>
+    </a><br>
+      <p>Choose a <code>&lt;dialog&gt;</code> type to show:</p>
+      <div id="controls">
+        <button id="none-btn"><code>closedby="none"</code></button>
+        <button id="closerequest-btn">
+          <code>closedby="closerequest"</code>
+        </button>
+        <button id="any-btn"><code>closedby="any"</code></button>
+      </div>
+      
+      <dialog closedby="none">
+        <h2><code>closedby="none"</code></h2>
+        <p>
+          Only closable using a specific provided mechanism, which in this case is
+          pressing the "Close" button below.
+        </p>
+        <button class="close">Close</button>
+      </dialog>
+      
+      <dialog closedby="closerequest">
+        <h2><code>closedby="closerequest"</code></h2>
+        <p>Closable using the "Close" button or the Esc key.</p>
+        <button class="close">Close</button>
+      </dialog>
+      
+      <dialog closedby="any">
+        <h2><code>closedby="any"</code></h2>
+        <p>
+          Closable using the "Close" button, the Esc key, or by clicking outside the
+          dialog. "Light dismiss" behavior.
+        </p>
+        <button class="close">Close</button>
+      </dialog>
+    <hr class="hr1">
+
+  <hr>
+  <script src="index.js" defer></script>
+</body>
+</html>
+

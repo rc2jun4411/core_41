@@ -1,0 +1,36 @@
+ref 44. https://developer.mozilla.org/en-US/docs/Web
+        /HTML/Reference/Elements
+
+ref 44.3 https://developer.mozilla.org/en-US/docs/Web
+        /HTML/Reference/Elements/dialog
+    In this article;
+     ・Attributes
+     ・Description
+     ・Accessibility
+     ・Examples
+
+2026-09-13
+folder: "core_41.3.7_html_reference_dialog-7", 
+
+actions;
+1. Preparaton
+    copy folder from "core_41.3.6_html_reference_dialog-6"           
+                to   "core_41.3.7_html_reference_dialog-7"
+2. edit
+2.31 index.html, style.css per ref 44.3 <dialog>
+ ・Examples, Comparison of different closedby behaviors
+   => ex-41.17 done!
+
+所見:
+三つのclick bottonのどれかを押すとdialogがopenする。
+左の "closedby="none"":
+　1. close buttonをclickするとcloseする。
+真ん中の "closedby="closerequest": 
+　1. close buttonをclickするとcloseする。
+  2. ESC keyを押すとcloseする。
+右の "closedby="any"":
+　1. close buttonをclickするとcloseする。
+  2. ESC keyを押すとcloseする。
+  3. dialogの外側をclickするとcloseする。
+
+用途不明？　一旦、中断する。

@@ -1,0 +1,49 @@
+<!-- C:\Users\rc2ju\OneDrive\Documents\core_41\core_41.3.5_html_reference_dialog-5\index.html -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Sonsie+One" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <title>HTML Reference, Elements</title>
+</head>
+
+<body>
+  <a>"ex-41.15, HTML Reference, Elements =dialog=;<br>
+    ・Examples,<br> Handling the return value from the dialog "<br>
+    </a><br>
+      <!-- A modal dialog containing a form -->
+      <dialog id="favDialog">
+        <form>
+          <p>
+            <label>
+              Favorite animal:
+              <select>
+                <option value="default">Choose…</option>
+                <option>Brine shrimp</option>
+                <option>Red panda</option>
+                <option>Spider monkey</option>
+              </select>
+            </label>
+          </p>
+          <div>
+            <button value="cancel" formmethod="dialog">Cancel</button>
+            <button id="confirmBtn" value="default">Confirm</button>
+          </div>
+        </form>
+      </dialog>
+      
+      <p>
+        <button id="showDialog">Show the dialog</button>
+      </p>
+      <output></output>
+  <hr class="hr1">
+
+  <hr>
+  <script src="index.js" defer></script>
+</body>
+</html>
+
