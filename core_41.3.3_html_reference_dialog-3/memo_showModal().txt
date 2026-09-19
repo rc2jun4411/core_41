@@ -1,0 +1,71 @@
+ref 1. https://developer.mozilla.org/en-US/docs/Web
+   /API/HTMLDialogElement/showModal
+
+   In this article:
+    ・Syntax
+    ・Examples
+
+=Notes=
+  The showModal() method of the HTMLDialogElement interface 
+displays the dialog as a modal dialog, over the top of 
+any other dialogs or elements that might be visible.
+  A modal dialog displays in the top layer, along with 
+a ::backdrop pseudo-element. Elements inside the same 
+document as the dialog, except the dialog and its descendants, 
+become inert (as if the inert attribute is specified). 
+Only the containing document becomes blocked; 
+  if the dialog is rendered inside an iframe, the rest of 
+the page remains interactive.
+
+=Gemini/Google search AI=
+Q1: 
+web api, modal dialog
+A1:
+AI による概要:        
+  Web標準のモーダルダイアログは、HTMLの dialog要素 と JavaScriptの 
+showModal() メソッドを組み合わせて実装できます。
+
+実装の手順:
+1. HTMLの記述:
+  <dialog> 要素を配置します。
+html:
+<dialog id="my-dialog">
+  <p>モーダルダイアログの内容です。</p>
+  <button id="close-btn">閉じる</button>
+</dialog>
+<button id="open-btn">開く</button>
+
+2. JavaScriptでの制御:
+  showModal() でモーダル表示し、close() で閉じます。
+javascript:
+const dialog = document.getElementById('my-dialog');
+const openBtn = document.getElementById('open-btn');
+const closeBtn = document.getElementById('close-btn');
+
+// 開く
+openBtn.addEventListener('click', () => {
+  dialog.showModal();
+});
+
+// 閉じる
+closeBtn.addEventListener('click', () => {
+  dialog.close();
+});
+
+3. CSSでのスタイリング:
+  背景（バックドロップ）の部分は ::backdrop 疑似要素でデザインを
+調整できます。
+css:
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+主なメリット:
+  背景の操作制限: 
+  モーダル表示中は背景が自動的に inert 状態になり、
+ダイアログ外の操作がブロックされます。
+  アクセシビリティ:
+  フォーカストラップや Esc キーでの閉じる動作が標準で備わっています。
+もし特定のフレームワーク（ReactやVueなど）での実装方法や、
+より詳しいスタイリング方法を知りたい場合は、利用している技術や
+お探しの詳細な動作を教えてください。

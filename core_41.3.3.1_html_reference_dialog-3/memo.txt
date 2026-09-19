@@ -1,0 +1,36 @@
+2026-09-19
+=> ex-41.11 working => ex-41.12 => ex-41.13 Q6/A6 へ
+=> ex-41.13.1 two <div></div>
+
+ref. ex-41.13 in folder "core_41.3.3_html_reference_dialog-3", Gemini Q/A6
+ask Google 検索/Gemini:
+Q1:
+codeです。html, ass, javascriptを送ります。
+二つの領域<div>内に異なるdialogをopen, close
+します。最初の<div>内はうまくいきますが、
+二つ目の<div>内はopenできるがcloseできません？
+A1:
+2つ目の <div> 内のダイアログが閉じない原因は、閉じるボタン
+の command="close1" という記述にあります。
+Invoker Commands API（commandfor 属性）において、
+<dialog> を閉じるための正しいコマンド名は 
+command="close" です。
+close1 という独自のコマンド名に変更してしまうと、
+ブラウザーが命令を認識できなくなります。
+
+※CSSとJavaScriptのコードは、提示いただいた内容のままで
+問題なく動作します。
+
+なぜこれで動くのか？commandfor="対象のID" で操作したい
+ダイアログを指定していれば、
+実行するアクション（command="close"）はどちらのダイアログ
+でも同じ共通のキーワードを使用して構いません。
+この修正で2つ目の領域も正しく開閉できるようになるかと
+思います！
+
+html修;
+command="close1" => "close" 
+Q2:
+両方の領域で動きました。ありがとうございました。JK
+
+=> ex-41.13.1 two <div></div> done!

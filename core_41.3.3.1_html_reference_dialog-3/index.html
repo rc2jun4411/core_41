@@ -1,0 +1,50 @@
+<!-- C:\Users\rc2ju\Documents\VScode_edit\core_41\core_41.3.3.1_html_reference_dialog-3\index.html -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Sonsie+One" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <title>HTML Reference, Elements</title>
+</head>
+
+<body>
+  <a>"ex-41.13.1, HTML Reference, Elements =dialog=;<br>
+    ・Examples,<br> JavaScript の .show() "<br>
+    Gemini, div内に表示, two div box</a><br>
+
+    <!-- ref. Gemini Q7/A7: -->
+    <div class="parent-box">
+      <button type="button" id="open-btn">Open dialog</button>
+      <p>親要素(div)の中身です</p>
+    
+      <dialog id="inner-dialog">
+        <p>divの中に固定されたダイアログ</p>
+        <button commandfor="inner-dialog" 
+                command="close">Close</button>
+      </dialog>
+    </div>
+<br>
+    <div class="parent-box1">
+      <button type="button" id="open-btn1">Open dialog1</button>
+      <p>親要素(div1)の中身です</p>
+    
+      <dialog id="inner-dialog1">
+        <p>div1の中に固定されたダイアログ</p>
+        <button commandfor="inner-dialog1" 
+                command="close">Close</button> 
+      <!-- 注: command="close1"は不可! "close"で ok-->
+      </dialog>
+    </div>
+    
+  
+  <hr class="hr1">
+
+  <hr>
+  <script src="index.js" defer></script>
+</body>
+</html>
+

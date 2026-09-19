@@ -1,0 +1,50 @@
+ref 1. https://developer.mozilla.org/en-US/docs/Web
+    /API/HTMLDialogElement/show
+    In this article;
+    ・Syntax
+    ・Examples
+
+=Notes=
+  The show() method of the HTMLDialogElement interface displays 
+the dialog as a non-modal dialog.
+  A non-modal dialog is one where users can interact with 
+content outside/behind the open dialog.
+
+=Gemini/Google search AI=
+Q1: 
+web api, modal dialog
+A1:
+AI による概要:        
+  Webの非モーダル（モードレス）ダイアログは、HTMLの <dialog> 
+要素に対してJavaScriptの show() メソッドを使用することで簡単
+に実装できます。 MDN Web Docs +1非モーダルダイアログの特徴ダイアログ
+が表示されている状態でも、背景にあるコンテンツを操作できます。
+  showModal() と異なり、背景の暗転（バックドロップ）やフォーカスロックは
+  自動で行われません。
+
+基本的な実装方法:
+HTML:
+html<dialog id="myDialog">
+  <p>非モーダルダイアログです。背景の操作が可能です。</p>
+  <button id="closeBtn">閉じる</button>
+</dialog>
+<button id="openBtn">開く</button>
+
+JavaScript:
+const dialog = document.getElementById('myDialog');
+const openBtn = document.getElementById('openBtn');
+const closeBtn = document.getElementById('closeBtn');
+
+// 非モーダルで開く
+openBtn.addEventListener('click', () => {
+  dialog.show();
+});
+
+// 閉じる
+closeBtn.addEventListener('click', () => {
+  dialog.close();
+});
+
+非モーダルダイアログについて、さらに知りたい内容はありますか？
+  ・ **アクセシビリティ（キーボード操作やARIA属性）**の注意点
+  ・ Popover APIなど他の機能との違い
